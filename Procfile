@@ -1,0 +1,1 @@
+web: gunicorn medlanchesfeliz.wsgi
