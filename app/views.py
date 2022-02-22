@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from app.forms import CarrosForm
-from app.models import Carros
+from app.models import Carros, Lanches
 from django.core.paginator import Paginator
 # Create your views here.
 def home(request):
     data = {}
     search = request.GET.get('search')
     if search:
-        data['db'] = Carros.objects.filter(modelo__icontains=search)
+        data['db'] = Lanches.objects.filter(nome__icontains=search)
     else:
-        data['db'] = Carros.objects.all()
+        data['db'] = Lanches.objects.all()
 
     #all = Carros.objects.all()
     #paginator = Paginator(all, 2)
@@ -23,6 +23,10 @@ def form(request):
     data['form'] = CarrosForm()
     return render(request, 'form.html', data)
 
+def login(request):
+
+    return render(request, 'login.html')
+
 def create(request):
     form = CarrosForm(request.POST or None)
     if form.is_valid():
@@ -31,7 +35,7 @@ def create(request):
 
 def view(request,pk):
     data = {}
-    data['db'] = Carros.objects.get(pk=pk)
+    data['db'] = Lanches.objects.get(pk=pk)
     return render(request, 'view.html', data)
 
 def edit(request, pk):

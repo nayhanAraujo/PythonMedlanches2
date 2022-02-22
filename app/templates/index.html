@@ -14,6 +14,8 @@
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
     <a href="/form" class="btn btn-success">Adicionar</a>
+            <a href="/login" class="btn btn-success">Login</a>
+
     </div>
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
@@ -26,21 +28,33 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Ano</th>
-              <th scope="col">ações</th>
+        <th scope="col">#</th>
+        <th scope="col">nome</th>
+        <th scope="col">tipo</th>
+        <th scope="col">Data/Pedido</th>
+        <th scope="col">Horário</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Total</th>
+        <th scope="col">Status</th>
+        <th scope="col">Forma de Pagamento</th>
+        <th scope="col">Data do Pagamento</th>
+        <th scope="col">ações</th>
 
     </tr>
   </thead>
   <tbody>
   {% for dbs in db %}
      <tr>
-      <th>{{dbs.id}}</th>
-      <td>{{dbs.modelo}}</td>
-      <td>{{dbs.marca}}</td>
-      <td>{{dbs.ano}}</td>
+         <th>{{dbs.id}}</th>
+         <td>{{dbs.nome}}</td>
+         <td>{{dbs.tipo}}</td>
+         <td>{{dbs.data_pedido}}</td>
+         <td>{{dbs.horario}}</td>
+         <td>{{dbs.qtd}}</td>
+         <td>{{dbs.total}}</td>
+         <td>{{dbs.status_pgto}}</td>
+         <td>{{dbs.tipo_pgto}}</td>
+         <td>{{dbs.data_pgto}}</td>
          <td>
              <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                           <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>

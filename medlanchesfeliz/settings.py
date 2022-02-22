@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'medlanchesfeliz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_ad51cbbb4b6d083',
+        'NAME': 'sistema',
         'PORT': '3306',
-        'HOST': 'us-cdbr-east-05.cleardb.net',
-        'USER': 'bb6eb7ad5eeef9',
-        'PASSWORD': 'ec80fec3'
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': ''
     }
 }
 
@@ -119,9 +119,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-django_heroku.settings(locals())
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    #'/var/www/static/',
+]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+#django_heroku.settings(locals())
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
