@@ -123,10 +123,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    #'/var/www/static/',
+    os.path.join(BASE_DIR, "staticfiles"),
+
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+
+
 #django_heroku.settings(locals())
 
 

@@ -31,6 +31,4 @@ urlpatterns = [
     path('delete/<int:pk>/', delete, name='delete'),
     path('login/', login, name='login'),
 
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
