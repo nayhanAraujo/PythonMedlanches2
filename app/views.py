@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from app.forms import CarrosForm
-from app.models import Carros, Lanches
+from app.models import Carros, Lanches, users_Login
 from django.core.paginator import Paginator
 # Create your views here.
 def home(request):
@@ -26,6 +26,10 @@ def form(request):
 def login(request):
 
     return render(request, 'login.html')
+
+def loginForm(request):
+
+    return render(request, 'loginForm.html')
 
 def create(request):
     form = CarrosForm(request.POST or None)

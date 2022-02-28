@@ -15,7 +15,13 @@ class Lanches(models.Model):
     data_pedido = models.CharField(max_length=150)
     horario = models.CharField(max_length=150)
     qtd = models.IntegerField()
-    total = models.DecimalField(..., max_digits=5, decimal_places=2)
+    total = models.DecimalField(max_digits=5, decimal_places=2)
     status_pgto = models.CharField(max_length=150)
     tipo_pgto = models.CharField(max_length=150)
     data_pgto = models.CharField(max_length=150)
+
+class users_Login(models.Model):
+    usuario = models.CharField(max_length=100)
+    password = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100)
+    telephone = models.CharField(max_length=100)

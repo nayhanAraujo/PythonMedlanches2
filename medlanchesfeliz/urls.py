@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from app.views import home, form, create, view, edit, update, delete, login
+from app.views import home, form, create, view, edit, update, delete, login, loginForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +30,6 @@ urlpatterns = [
     path('delete/<int:pk>/', delete, name='delete'),
     path('delete/<int:pk>/', delete, name='delete'),
     path('login/', login, name='login'),
+    path('loginForm/', loginForm, name='loginForm'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
