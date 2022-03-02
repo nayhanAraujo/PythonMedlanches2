@@ -8,13 +8,16 @@ def home(request):
     search = request.GET.get('search')
     if search:
         data['db'] = Lanches.objects.filter(nome__icontains=search)
+
     else:
         data['db'] = Lanches.objects.all()
 
-    #all = Carros.objects.all()
-    #paginator = Paginator(all, 2)
-    #pages = request.GET.get('page')
-    #data['db'] = paginator.get_page(pages)
+        #all = Lanches.objects.all()
+        #paginator = Paginator(all, 10)
+        #pages = request.GET.get('page')
+        #data['db'] = paginator.get_page(pages)
+
+
 
     return render(request, 'index.html', data)
 
