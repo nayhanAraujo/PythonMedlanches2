@@ -54,12 +54,12 @@
 								<th class="column100 column3" data-column="column3">Tipo</th>
 								<th class="column100 column4" data-column="column4">Data/Pedido</th>
 								<th class="column100 column5" data-column="column5">Horario</th>
-								<th class="column100 column6" data-column="column6">QTD</th>
+								<th class="column100 column1" data-column="column6">QTD</th>
 								<th class="column100 column7" data-column="column7">Total</th>
 								<th class="column100 column8" data-column="column8">Status</th>
-								<th class="column100 column8" data-column="column9">Forma de Pagamento</th>
-								<th class="column100 column8" data-column="column10">Data Pagamento</th>
-								<th class="column100 column8" data-column="acoes">Ações</th>
+								<th class="column100 column9" data-column="column9">Forma de Pagamento</th>
+								<th class="column100 column10" data-column="column10">Data Pagamento</th>
+								<th class="column100 column11" data-column="column11">Ações</th>
 
 
 
@@ -69,19 +69,19 @@
 						{% for dbs in db %}
 							<tr class="row100">
 								<td class="column100 column1" data-column="column0">{{dbs.id}}</td>
-								<td class="column100 column1" data-column="column1">{{dbs.nome}}</td>
-								<td class="column100 column2" data-column="column2">{{dbs.tipo}}</td>
-								<td class="column100 column3" data-column="column3">{{dbs.data_pedido}}</td>
-								<td class="column100 column4" data-column="column4">{{dbs.horario}}</td>
-								<td class="column100 column5" data-column="column5">{{dbs.qtd}}</td>
-								<td class="column100 column6" data-column="column6">{{dbs.total}}</td>
-								<td class="column100 column7" data-column="column7">{{dbs.status_pgto}}</td>
-								<td class="column100 column8" data-column="column8">{{dbs.tipo_pgto}}</td>
-								<td class="column100 column9" data-column="column9">{{dbs.data_pgto}}</td>
-								<td class="column100 column10" data-column="column10">
-									<a href="/view/{{dbs.id}}" class="btn btn-primary">Visualizar</a>
-									<a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-									<a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+								<td class="column100 column2" data-column="column1">{{dbs.nome}}</td>
+								<td class="column100 column3" data-column="column2">{{dbs.tipo}}</td>
+								<td class="column100 column4" data-column="column3">{{dbs.data_pedido}}</td>
+								<td class="column100 column5" data-column="column4">{{dbs.horario}}</td>
+								<td class="column100 column1" data-column="column5">{{dbs.qtd}}</td>
+								<td class="column100 column7" data-column="column6">{{dbs.total}}</td>
+								<td class="column100 column8" data-column="column7">{{dbs.status_pgto}}</td>
+								<td class="column100 column9" data-column="column8">{{dbs.tipo_pgto}}</td>
+								<td class="column100 column10" data-column="column9">{{dbs.data_pgto}}</td>
+								<td class="column100 column11">
+									<a href="/view/{{dbs.id}}" class="btn btn-danger">Visualizar</a>
+									<a href="/edit/{{dbs.id}}" class="btn btn-success">Editar</a>
+									<a href="/delete/{{dbs.id}}" class="btn btn-success">Deletar</a>
 								</td>
 
 							</tr>
