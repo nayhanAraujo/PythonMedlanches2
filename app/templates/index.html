@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MedLanchesFeliz</title>
 
 
@@ -34,11 +34,12 @@
 
     </div>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
 
-            <form method="get"><input id="search" name="search" class="form-control" placeholder="Buscar..."> </form>
-        </div>
+		<div class="col-8 m-auto pt-3 pb-2 text-center">
 
+			<form method="get"><input id="search" name="search" class="form-control" placeholder="Buscar..."></form>
+		</div>
+	
 
 	<div class="limiter">
 		<div class="container-table100">
@@ -80,8 +81,13 @@
 								<td class="column100 column10" data-column="colum10">{{dbs.data_pgto}}</td>
 								<td class="column100 column11" data-column="colum11">
 									<a href="/view/{{dbs.id}}" class="btn btn-danger">Visualizar</a>
+
+
+									{% if dbs.data_pgto != None %}
 									<a href="/edit/{{dbs.id}}" class="btn btn-success">Editar</a>
+									{% else %}
 									<a href="/delete/{{dbs.id}}" class="btn btn-success">Deletar</a>
+									{% endif %}
 								</td>
 
 							</tr>
@@ -167,4 +173,5 @@
 	<script src="{% static '/css/tabela/js/main.js' %}"></script>
 
 </body>
+
 </html>
