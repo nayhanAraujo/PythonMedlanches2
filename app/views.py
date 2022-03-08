@@ -12,6 +12,8 @@ def home(request):
     else:
         #data['db'] = Lanches.objects.all()[:5]
         data['db'] = Lanches.objects.filter(nome='marcos', data_pedido='2022-02-18')[:5]
+        #data['db'] = Lanches.objects.all()
+
         #data['db'] = Lanches.objects.filter(data_pedido='2022-02-18')
 
         #all = Lanches.objects.all()
