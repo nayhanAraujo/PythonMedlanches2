@@ -16,11 +16,16 @@
 
 </head>
 <body>
-<div class="container mt-5 mb-5 d-flex justify-content-center">
+<div class="modal-body p-5 pt-0  mt-5 mb-5 d-flex justify-content-center">
     <div class="card px-1 py-4">
         <div class="card-body">
+            <div class="d-flex justify-content-center">
+             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2" width="60" height="60" role="img" aria-label="icone" src="{% static 'img/medlanchesLogo.jpeg' %}"></img>
+        </a>
+                </div>
             <h6 class="card-title mb-3">Formulário de Cadastro</h6>
-            <div class="d-flex flex-row"> <label class="radio mr-1"> <input type="radio" name="add" value="anz" checked> <span> <i class="fa fa-user"></i> Anz CMK </span> </label> <label class="radio"> <input type="radio" name="add" value="add"> <span> <i class="fa fa-plus-circle"></i> Add </span> </label> </div>
+            <div class="d-flex flex-row"> <label class="radio mr-1"> <input type="radio" name="add" value="anz" checked> <span> <i class="fa fa-user"></i> Teste </span> </label> <label class="radio"> <input type="radio" name="add" value="add"> <span> <i class="fa fa-plus-circle"></i> Add </span> </label> </div>
             <h6 class="information mt-4">Preencha todos os campos abaixo</h6>
             <div class="row">
                 <div class="col-sm-12">
@@ -56,9 +61,11 @@
                     </div>
                 </div>
             </div>
-            <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By Booking this appointment you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div> <button class="btn btn-primary btn-block confirm-button">Cadastrar</button>
+            <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">Preenchendo essas informações você concorda com os</small> <a href="#" class="terms">Termos & Condições</a> </div> <button class="btn btn-primary btn-block confirm-button">Cadastrar</button>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

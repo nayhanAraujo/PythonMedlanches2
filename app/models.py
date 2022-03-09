@@ -7,8 +7,6 @@ class Carros(models.Model):
     marca = models.CharField(max_length=100)
     ano = models.IntegerField()
 
-
-
 class Lanches(models.Model):
     nome = models.CharField(max_length=150)
     tipo = models.CharField(max_length=150)
@@ -20,8 +18,4 @@ class Lanches(models.Model):
     tipo_pgto = models.CharField(max_length=150)
     data_pgto = models.CharField(max_length=150)
 
-class users_Login(models.Model):
-    usuario = models.CharField(max_length=100)
-    password = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    telephone = models.CharField(max_length=100)
+

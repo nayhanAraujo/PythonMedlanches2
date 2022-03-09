@@ -16,9 +16,5 @@ class LanchesForm(ModelForm):
         fields = ['nome', 'tipo', 'data_pedido', 'horario', 'qtd', 'total', 'status_pgto', 'tipo_pgto', 'data_pgto']
 
 
-class userForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    class Meta:
-        model = users_Login
-        fields = ['usuario', 'password', 'email', 'telephone']
+
 
