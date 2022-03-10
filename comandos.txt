@@ -1,0 +1,5 @@
+#importar as estrutura do banco de dados para o python
+
+
+
+python manage.py inspectdb > nome__da__app.moedels.py
