@@ -42,7 +42,7 @@
       }
     </style>
 
-    
+
 
 
   </head>
@@ -200,8 +200,8 @@
                           {% for dbs in db %}
 
                           <tr class="row100">
-                              <td class="column100 column1" data-column="column1">{{dbs.id}}</td>
-                              <td class="column100 column2" data-column="column2">{{dbs.nome}}</td>
+                              <td class="column100 column1" data-column="column1">{{dbs.idd}}</td>
+                              <td class="column100 column2" data-column="column2">{{dbs.nomoe}}</td>
                               <td class="column100 column3" data-column="column3">{{dbs.tipo}}</td>
                               <td class="column100 column4" data-column="column4">{{dbs.data_pedido}}</td>
                               <td class="column100 column5" data-column="column5">{{dbs.horario}}</td>
@@ -214,11 +214,11 @@
                                   <a href="/view/{{dbs.id}}" class="btn btn-danger">Visualizar</a>
 
 
-                                  {% if dbs.data_pgto != None %}
+                                 <!-- {% if dbs.data_pgto != None %}
                                   <a href="/edit/{{dbs.id}}" class="btn btn-success">Editar</a>
                                   {% else %}
                                   <a href="/delete/{{dbs.id}}" class="btn btn-success">Deletar</a>
-                                  {% endif %}
+                                  {% endif %}-->
                               </td>
 
                           </tr>
