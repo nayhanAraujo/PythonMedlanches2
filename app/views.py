@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from app.forms import CarrosForm
-from app.models import Carros, Lanches
+from app.models import Carros, Lanches, AuthUser
 from django.contrib.auth import authenticate
 
 from django.core.paginator import Paginator
@@ -33,8 +33,13 @@ def form(request):
     return render(request, 'form.html', data)
 
 def login(request):
-
-    return render(request, 'login.html')
+    result = {}
+    user = request.GET('usuario')
+    result['db'] = AuthUser.objetos.filter(username=user)
+    if result:
+     return render(request, 'dashboard/index.html', {'result': result})
+    else:
+     return render(request, 'login.html')
 
 def loginForm(request):
 

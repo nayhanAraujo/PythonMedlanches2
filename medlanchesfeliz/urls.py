@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path,include
+from django.urls import path, include
+from django.contrib.auth import views
 from app.views import home, form, create, view, edit, update, delete, login, loginForm, dashboard
 
 urlpatterns = [
@@ -28,8 +29,10 @@ urlpatterns = [
     path('edit/<int:pk>/', edit, name='edit'),
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
-    path('login/', login, name='login'),
+    # path('login/', login, name='login'),
+    path('login/', views.LoginView.as_view(), name='login'),
     path('loginForm/', loginForm, name='loginForm'),
     path('dashboard/', dashboard, name='dashboard'),
     path('accounts/', include('django.contrib.auth.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
