@@ -34,3 +34,4 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
+hh
