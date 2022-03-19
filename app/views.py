@@ -33,12 +33,7 @@ def form(request):
     return render(request, 'form.html', data)
 
 def login(request):
-    result = {}
-    user = request.GET('usuario')
-    result['db'] = AuthUser.objetos.filter(username=user)
-    if result:
-     return render(request, 'dashboard/index.html', {'result': result})
-    else:
+
      return render(request, 'login.html')
 
 def loginForm(request):
@@ -48,7 +43,6 @@ def loginForm(request):
 def dashboard(request):
 
     return render(request, 'dashboard/index.html')
-
 
 def create(request):
     form = CarrosForm(request.POST or None)
