@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'medlanchesfeliz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema',
+        'NAME': 'heroku_fae37940f4b3804',
         'PORT': '3306',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': ''
+        'HOST': 'us-cdbr-east-05.cleardb.net',
+        'USER': 'bb3bc6347a798a',
+        'PASSWORD': 'd093c45f'
     }
 }
 
