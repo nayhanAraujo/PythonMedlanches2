@@ -41,8 +41,24 @@ def loginForm(request):
     return render(request, 'loginForm.html')
 
 def dashboard(request):
+    data = {}
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Lanches.objects.filter(nome__icontains=search)
 
-    return render(request, 'dashboard/index.html')
+    else:
+        # data['db'] = Lanches.objects.all()[:5]
+        data['db'] = Lanches.objects.filter(nome='marcos', data_pedido='2022-02-18')[:5]
+        # data['db'] = Lanches.objects.all()
+
+        # data['db'] = Lanches.objects.filter(data_pedido='2022-02-18')
+
+        # all = Lanches.objects.all()
+        # paginator = Paginator(all, 10)
+        # pages = request.GET.get('page')
+        # data['db'] = paginator.get_page(pages)
+
+    return render(request, 'dashboard/index.html', data)
 
 def create(request):
     form = CarrosForm(request.POST or None)

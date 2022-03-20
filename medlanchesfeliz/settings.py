@@ -55,7 +55,7 @@ ROOT_URLCONF = 'medlanchesfeliz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ DATABASES = {
         'PORT': '3306',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'admin'
+        'PASSWORD': ''
     }
 }
 
@@ -129,7 +129,7 @@ STATICFILES_DIRS = [
 ]
 
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
 # Default primary key field type
