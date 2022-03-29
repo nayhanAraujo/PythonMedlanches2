@@ -66,6 +66,15 @@ def create(request):
         form.save()
         return redirect('home')
 
+def cadastrar_usuario(request):
+    if request.method == "POST":
+            form_usuario = UserCreationForm(request.POST)
+            if form_usuario.is_valid():
+                form_usuario.save()
+                return redirect('dashboard/index.html')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request, 'loginForm.html')
 def view(request,pk):
     data = {}
     data['db'] = Lanches.objects.get(pk=pk)

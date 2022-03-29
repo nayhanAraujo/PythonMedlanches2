@@ -176,7 +176,8 @@
       </div>
     </div>
 
-<!-- Outro modelo de table <div class="bd-example">
+<!-- Outro modelo de table
+<div class="bd-example">
         <table class="table table-hover">
           <thead>
           <tr>
@@ -237,6 +238,56 @@
         </div>-->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <canvas class="my-10 w-5" id="myChart" width="5" height="5"></canvas>
+          <table class="table table-hover">
+          <thead>
+            <tr class="row100 head">
+                              <th class="column100 column1" data-column="column1">#</th>
+                              <th class="column100 column2" data-column="column2">Nome</th>
+                              <th class="column100 column3" data-column="column3">Tipo</th>
+                              <th class="column100 column4" data-column="column4">Data/Pedido</th>
+                              <th class="column100 column5" data-column="column5">Horario</th>
+                              <th class="column100 column6" data-column="column6">QTD</th>
+                              <th class="column100 column7" data-column="column7">Total</th>
+                              <th class="column100 column8" data-column="column8">Status</th>
+                              <th class="column100 column9" data-column="column9">Forma de Pagamento</th>
+                              <th class="column100 column10" data-column="column10">Data Pagamento</th>
+                              <th class="text-center" data-column="column11">Ações</th>
+
+
+                          </tr>
+          </thead>
+       <tbody>
+
+                          {% for dbs in db %}
+
+                          <tr class="table-primary">
+                              <td class="column100 column1" data-column="column1">{{dbs.id}}</td>
+                              <td class="column100 column2" data-column="column2">{{dbs.nome}}</td>
+                              <td class="column100 column3" data-column="column3">{{dbs.tipo}}</td>
+                              <td class="column100 column4" data-column="column4">{{dbs.data_pedido}}</td>
+                              <td class="column100 column5" data-column="column5">{{dbs.horario}}</td>
+                              <td class="column100 column6" data-column="column6">{{dbs.qtd}}</td>
+                              <td class="column100 column7" data-column="column7">{{dbs.total}}</td>
+                              <td class="column100 column8" data-column="column8">{{dbs.status_pgto}}</td>
+                              <td class="column100 column9" data-column="column9">{{dbs.tipo_pgto}}</td>
+                              <td class="column100 column10" data-column="colum10">{{dbs.data_pgto}}</td>
+                              <td class="column100 column11" data-column="colum11">
+                               <a href="/view/{{dbs.id}}" class="btn btn-danger"><i class="fa-regular fa-eye"></i> Visualizar</a>
+
+<!--
+                                  {% if dbs.data_pgto != None %}
+                                     <a href="/edit/{{dbs.id}}" class="btn btn-success">Editar</a>
+                                  {% else %}
+                                     <a href="/delete/{{dbs.id}}" class="btn btn-success">Deletar</a>
+                                  {% endif %}-->
+                              </td>
+
+                          </tr>
+
+                          {% endfor %}
+
+                          </tbody>
+        </table>
           <div class="container-table100">
               <div class="wrap-table100">
                   <div class="table100 ver6 m-b-110">

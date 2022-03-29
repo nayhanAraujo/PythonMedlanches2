@@ -3,8 +3,8 @@ body {
 }
 
 .card {
-    width: 400px;
-    background-color: #fff;
+    width:600px;
+    background-color: #439fb2;
     border: none;
     border-radius: 12px
 }
@@ -43,7 +43,7 @@ label.radio input:checked+span {
 }
 
 .form-control {
-    margin-top: 10px;
+    margin-top: 1px;
     height: 48px;
     border: 2px solid #eee;
     border-radius: 10px
@@ -66,5 +66,6 @@ label.radio input:checked+span {
 
 .confirm-button {
     height: 50px;
-    border-radius: 10px
+    border-radius: 10px;
+    width: 550px;
 }
