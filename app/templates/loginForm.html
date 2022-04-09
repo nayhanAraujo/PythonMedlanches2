@@ -28,21 +28,46 @@
         </a>
                 </div>
             <h6 class="information mt-4" align="center" >Preencha todos os campos abaixo</h6>
-            <form method="post">
-            <div class="row">
+
+            <form method="post" class="row g-3">
+{% csrf_token %}
+
+         <div class="form-group">
+        {{form_usuario.username.errors}}
+        <label>Username: </label>
+        {{form_usuario.username}}
+    </div>
+
+    <div class="form-group">
+        {{form_usuario.password1.errors}}
+        <label>Senha: </label>
+        {{form_usuario.password1}}
+    </div>
+
+    <div class="form-group">
+        {{form_usuario.password2.errors}}
+        <label>Confirmação de senha: </label>
+        {{form_usuario.password2}}
+    </div>
+         <!--   <div class="row">
+                     {{form_usuario.username.errors}}
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i> </span>
-                       <input class="form-control" type="text" placeholder="nome">
+                       <input class="form-control" type="text" placeholder="nome" >
                     </div>
                 </div>
             </div>
+
 
             <div class="row">
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text" id="basic-addon1" ><i class="fa-solid fa-phone"></i></span>
-                         <input class="form-control" type="text" placeholder="Telephone">
+                         <input class="form-control is-valid" type="text" placeholder="Telephone" id="validationServer01"  required>
+                         <div class="valid-feedback">
+                          Excelente
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,25 +83,32 @@
 
              <div class="row">
                 <div class="col-sm-12">
-                        <div class="input-group mb-2">
+                    <div class="input-group mb-2">
+                        {{form.usuario.password1.errors}}
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                         <input class="form-control" type="text" placeholder="senha">
+                         <input class="form-control" type="password" placeholder="senha" autocomplete="current_password"
+                         MINLENGTH="4" MAXLENGTH="8">
                     </div>
                 </div>
             </div>
 
            <div class="row">
+               {{form.usuario.password2.errors}}
                 <div class="col-sm-12">
+
                         <div class="input-group mb-3">
+
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                         <input class="form-control" type="text" placeholder="Confirmar senha">
+                         <input class="form-control" type="password" placeholder="Confirmar senha" minlength="4" maxlength="8">
                     </div>
                 </div>
             </div>
 
             <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">Preenchendo essas informações você concorda com os</small> <a href="#" class="terms">Termos & Condições</a> </div>
-                <button class="btn btn-primary btn-block confirm-button">Cadastrar</button>
+            -->
+                <input class="btn btn-primary btn-block confirm-button" type="submit" value="Cadastrar"/>
             </form>
+
         </div>
     </div>
 </div>

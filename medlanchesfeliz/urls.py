@@ -18,7 +18,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.auth import views
-from app.views import home, form, create, view, edit, update, delete, login, loginForm, dashboard
+from app.views import home, form, create, view, edit, update, delete, login, loginForm, dashboard, cadastrar_usuario
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +31,7 @@ urlpatterns = [
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
     path('login/', login, name='login'),
-    path('loginForm/', loginForm, name='loginForm'),
+    path('loginForm/', cadastrar_usuario, name='cadastrar_usuario'),
     path('dashboard/', dashboard, name='dashboard'),
     path('accounts/', include('django.contrib.auth.urls')),
 

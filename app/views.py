@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from app.forms import CarrosForm
 from app.models import Carros, Lanches, AuthUser
@@ -71,10 +72,10 @@ def cadastrar_usuario(request):
             form_usuario = UserCreationForm(request.POST)
             if form_usuario.is_valid():
                 form_usuario.save()
-                return redirect('dashboard/index.html')
+                return redirect('home')
     else:
         form_usuario = UserCreationForm()
-    return render(request, 'loginForm.html')
+    return render(request, 'loginForm.html', {'form_usuario': form_usuario})
 def view(request,pk):
     data = {}
     data['db'] = Lanches.objects.get(pk=pk)
