@@ -1,8 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from app.forms import CarrosForm
 from app.models import Carros, Lanches, AuthUser
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 from django.core.paginator import Paginator
 # Create your views here.
@@ -33,7 +33,7 @@ def form(request):
     data['form'] = CarrosForm()
     return render(request, 'form.html', data)
 
-def login(request):
+def login2(request):
 
      return render(request, 'login.html')
 
@@ -76,7 +76,23 @@ def cadastrar_usuario(request):
     else:
         form_usuario = UserCreationForm()
     return render(request, 'loginForm.html', {'form_usuario': form_usuario})
-def view(request,pk):
+
+def logar_usuario(request):
+    if request.method == "POST":
+        user1 = request.POST["username"]
+        senha = request.POST["password"]
+        usuario1 = authenticate(request, username=user1, password=senha)
+        if usuario1 is not None:
+            login(request, usuario1)
+            return redirect('dashboard')
+        else:
+            form_login = AuthenticationForm()
+    else:
+        form_login = AuthenticationForm()
+    return render(request, 'login.html', {'form_login': form_login})
+
+
+def view(request, pk):
     data = {}
     data['db'] = Lanches.objects.get(pk=pk)
     return render(request, 'view.html', data)
